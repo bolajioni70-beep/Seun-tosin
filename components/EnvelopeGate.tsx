@@ -16,13 +16,13 @@ export default function EnvelopeGate() {
               backgroundColor: "#800000", // deep maroon
             }}
           >
-            {/* Gold wax seal */}
+            {/* Shiny wax seal image */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-24 h-24 bg-[#FFD700] rounded-full flex items-center justify-center shadow-lg border-4 border-[#b8860b]">
-                <span className="text-3xl font-serif text-[#800000] italic">
-                  S&T
-                </span>
-              </div>
+              <img
+                src="/photos/seal.png"
+                alt="Wax Seal"
+                className="w-24 h-24 rounded-full shadow-lg border-4 border-[#b8860b]"
+              />
             </div>
           </div>
 
