@@ -1,50 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function EnvelopeGate() {
   const [opened, setOpened] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const handleOpen = () => {
+    setOpened(true);
+    if (audioRef.current) {
+      audioRef.current.play().catch(() => {
+        console.log("Autoplay blocked, user must interact again.");
+      });
+    }
+  };
 
   return (
-    <>
+    <section className="h-screen flex items-center justify-center bg-[#800000] text-center">
       {!opened ? (
-        <div className="flex flex-col items-center justify-center h-screen bg-[#800000]">
-          {/* Envelope background */}
-          <div
-            className="w-96 h-56 rounded-lg shadow-lg relative flex items-center justify-center"
-            style={{
-              backgroundColor: "#800000", // deep maroon
-            }}
-          >
-            {/* Shiny wax seal image */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <img
-                src="/photos/seal.png"
-                alt="Wax Seal"
-                className="w-24 h-24 rounded-full shadow-lg border-4 border-[#b8860b]"
-              />
-            </div>
-          </div>
-
-          {/* Open button */}
-          <button
-            onClick={() => {
-              setOpened(true);
-              document.getElementById("weddingSong")?.play();
-            }}
-            className="mt-6 px-6 py-3 bg-[#FFD700] text-[#800000] rounded-lg shadow hover:bg-yellow-500 font-semibold"
-          >
-            Open Invitation
-          </button>
-
-          {/* Audio trigger */}
-          <audio id="weddingSong" src="/audio/anendlessocean.mp3" loop />
-        </div>
+        <button
+          onClick={handleOpen}
+          className="px-8 py-4 bg-[#FFD700] text-[#800000] rounded-lg shadow-lg font-bold text-xl hover:bg-yellow-500"
+        >
+          Open Envelope
+        </button>
       ) : (
-        <div>
-          {/* Swiper slides go here (LoveStory, InviteCards, etc.) */}
+        <div className="text-[#FFD700] text-3xl font-bold">
+          Welcome to Our Wedding Invitation
         </div>
       )}
-    </>
+
+      {/* Hidden audio player */}
+      <audio ref={audioRef} src="/audio/anendlessocean.mp3" loop />
+    </section>
   );
 }
