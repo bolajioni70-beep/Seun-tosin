@@ -8,17 +8,17 @@ export default function CongratulationsSection() {
         <p className="text-lg leading-relaxed text-[#333] mb-4">
           With joy in our hearts, we celebrate the union of
         </p>
-        <h1 className="text-3xl font-serif italic text-[#800000] mb-2">
+        <h1 className="calligraphy text-3xl mb-2">
           Oluwaseun Oni
         </h1>
-        <h1 className="text-3xl font-serif italic text-[#800000] mb-6">
+        <h1 className="calligraphy text-3xl mb-6">
           &amp; Oluwatosin Faoyemi
         </h1>
         <p className="text-lg leading-relaxed text-[#333] mb-4">
           Thank you for being part of our love story and sharing in this
           unforgettable day.
         </p>
-        <p className="italic text-[#800000] font-semibold">
+        <p className="calligraphy text-2xl">
           #S&amp;T love story 26#
         </p>
       </div>
