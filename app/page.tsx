@@ -1,7 +1,11 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, EffectFade } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 
 import EnvelopeGate from "../components/EnvelopeGate";
 import InviteCards from "../components/InviteCards";
@@ -20,10 +24,15 @@ export default function Page() {
       {/* Envelope gate first */}
       <EnvelopeGate />
 
-      {/* Swiper for slides */}
+      {/* Swiper with fade effect */}
       <Swiper
+        modules={[Navigation, Pagination, EffectFade]}
         spaceBetween={50}
         slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        effect="fade"
+        fadeEffect={{ crossFade: true }}
         className="h-screen"
       >
         <SwiperSlide>
