@@ -31,7 +31,7 @@ export default function EnvelopeGate() {
       )}
 
       {/* Hidden audio player */}
-      <audio ref={audioRef} src="/audio/anendlessocean.mp3" loop />
+      <audio ref={audioRef} src="/audio/Anendlessocean.mp3" loop />
     </section>
   );
 }
